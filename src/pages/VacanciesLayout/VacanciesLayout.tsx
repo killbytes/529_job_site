@@ -57,7 +57,7 @@ export function VacanciesLayout() {
                         <Group justify="space-between">
                             <Group gap="sm" wrap='wrap' align="start" className={classes.wraptitle}
                                    style={{flexDirection: 'column'}}>
-                                <Title order={2} fw={700} className={classes.title}>
+                                <Title order={2} fw={700} className={classes.title} c="#000000">
                                     Список вакансий
                                 </Title>
                                 <Text c="#0F0F1080">
