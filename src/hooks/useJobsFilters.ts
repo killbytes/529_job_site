@@ -1,17 +1,24 @@
-import { useSearchParams } from 'react-router';
+import {useLocation, useSearchParams} from 'react-router';
 import type { JobsFilters } from '../shared/types/jobs.types';
 
 const DEFAULT_PAGE = 1;
 
+const ROUTE_CITIES: Record<string, string> = {
+    moscow: 'Москва',
+    petersburg: 'Санкт-Петербург',
+};
+
 export function useJobsFilters() {
     const [searchParams, setSearchParams] = useSearchParams();
-
+    const { pathname }              = useLocation();
+    const citySlug           = pathname.split('/').filter(Boolean)[1];
+    const routeCity          = ROUTE_CITIES[citySlug] ?? '';
     const search             = searchParams.get('search') ?? '';
-    const city               = searchParams.get('city') ?? '';
+    const city               = routeCity || searchParams.get('city') || '';
     const skillsParam        = searchParams.get('skills') ?? '';
-    const skills             = skillsParam ? skillsParam.split(',').filter((x) => Boolean(x)) : [];
-    const pageParam = Number(searchParams.get('page'));
-    const page      = pageParam > 0 ? pageParam : DEFAULT_PAGE;
+    const skills            = skillsParam ? skillsParam.split(',').filter((x) => Boolean(x)) : [];
+    const pageParam         = Number(searchParams.get('page'));
+    const page              = pageParam > 0 ? pageParam : DEFAULT_PAGE;
 
     const filters: JobsFilters = {search, city, skills, page};
 
