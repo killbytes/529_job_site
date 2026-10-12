@@ -1,38 +1,5 @@
-# 423_job_site
+# 529_job_site
 
-Vite + React + TypeScript + Mantine + Redux Toolkit + RTK Query.
+Vite + React + TypeScript + Mantine + Redux Toolkit + RTK Query + React-router.
 
-[`link-page`](https://killbytes.github.io/423_job_site/)
-
-                    ┌──────────────┐
-                    │     URL      │
-                    │ search       │
-                    │ city         │
-                    │ skills       │
-                    │ page         │
-                    └──────┬───────┘
-                           │
-                    useJobsFilters
-                           │
-              ┌────────────┴────────────┐
-              │                         │
-              ▼                         ▼
-        JobsPage                 JobFilters
-              │                    │       │
-              │                    │       │
-              ▼                    ▼       ▼
-       searchValue              skills    city
-              │                    │       │
-              ▼                    │       │
-        setSearch()          setSkills() setCity()
-              │                    │       │
-              └────────────────────┴───────┘
-                                   │
-                                   ▼
-                                  URL
-                                   │
-                                   ▼
-                            JobsList
-                                   │
-                                   ▼
-                          useGetJobsQuery
+[`link-page`](https://killbytes.github.io/529_job_site/)

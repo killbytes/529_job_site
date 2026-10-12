@@ -34,7 +34,6 @@ export function VacanciesLayout() {
         if (!data?.jobs || !debouncedSearch.trim()) {
             return [];
         }
-
         return [
             ...new Set(
                 data.jobs.flatMap((job) => [
