@@ -11,7 +11,7 @@ import {BrowserRouter} from 'react-router';
 
 createRoot(document.getElementById('root')!).render(
     <StrictMode>
-        <BrowserRouter basename="/423_job_site">
+        <BrowserRouter basename="/529_job_site">
             <Provider store={store}>
                 <MantineProvider>
                     <App />

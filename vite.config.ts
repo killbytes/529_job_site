@@ -5,7 +5,7 @@ import path from "path"
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/423_job_site/',
+  base: '/529_job_site/',
   plugins: [react()],
   resolve: {
     alias: {
