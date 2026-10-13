@@ -49,6 +49,16 @@ export function VacanciesLayout() {
         setSearch(value);
     };
 
+    const handleTabChange = (value: string | null) => {
+        if (!value) return;
+
+        const nextPath = `/vacancies/${value}`;
+        navigate({
+            pathname: nextPath,
+            search: location.search,
+        });
+    };
+
     return (
         <Container size="md" className={classes.container}>
             <Stack gap="sm">
@@ -82,7 +92,7 @@ export function VacanciesLayout() {
                 <Grid>
                     <Grid.Col span={4}><JobFilters/></Grid.Col>
                     <Grid.Col span={{ base: 12, md: 8 }}>
-                        <Tabs value={activeTab} onChange={(value) => navigate(`/vacancies/${value}`)}>
+                        <Tabs value={activeTab}  onChange={handleTabChange}>
                             <Tabs.List mb="md">
                                 <Tabs.Tab value="moscow">Москва</Tabs.Tab>
                                 <Tabs.Tab value="petersburg">Санкт-Петербург</Tabs.Tab>
